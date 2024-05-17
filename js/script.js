@@ -4,6 +4,11 @@ const bookForm = document.querySelector('#hideForm');
 const submitBtn = document.querySelector('.submitBtn');
 const cancelBtn = document.querySelector('.cancelSubmit');
 
+const newTitle = document.querySelector("#title");
+const newAuthor = document.querySelector("#author");
+const newPgC = document.querySelector("#pageC");
+const newRead = document.querySelectorAll("#readStat");
+
 const myLibrary = [];
 
 // Book Object Constructor
@@ -39,6 +44,7 @@ function showBooks(){
     for (let i = 0; i < myLibrary.length; i++) {
             const newBook = document.createElement("div");
             const deleteBtn = document.createElement("div");
+            const updateBtn = document.createElement("div");
 
             newBook.innerHTML = `
             <div>
@@ -47,12 +53,15 @@ function showBooks(){
             </div>
             `
 
+            updateBtn.innerHTML = `<button onclick="updateRead(${i})">Update Read</button>`;
             deleteBtn.innerHTML = `<button onclick="deleteBook(${i})">X</button>`;
 
             newBook.setAttribute("class", `book`);
+            updateBtn.setAttribute("class", 'updateBtn');
             deleteBtn.setAttribute("class", `bookR`);
             
             library.appendChild(newBook);
+            newBook.appendChild(updateBtn);
             newBook.appendChild(deleteBtn);
             console.log(myLibrary[i].info());
         }    
@@ -77,14 +86,6 @@ cancelBtn.addEventListener("click", () => {
 submitBtn.addEventListener("click", () => {
     event.preventDefault();
 
-    const newTitle = document.querySelector("#title");
-    const newAuthor = document.querySelector("#author");
-    const newPgC = document.querySelector("#pageC");
-    const newRead = document.querySelectorAll("#readStat");
-
-
-
-
     if(newTitle.value =="" || newAuthor.value =="" || newPgC.value =="" || newRead.value ==""){
         alert("Please fill out all fields before submitting.")
     } else {
@@ -104,7 +105,21 @@ submitBtn.addEventListener("click", () => {
     }
 })
 
+// function to delete books from list by using delete button
 function deleteBook(i) {
 	myLibrary.splice(i, 1);
 	showBooks();
+}
+
+function updateRead(i){
+    if(myLibrary[i].read ==="Not Read Yet"){
+        myLibrary[i].read = "In Progress";
+        showBooks();
+    } else if (myLibrary[i].read === "In Progress"){
+        myLibrary[i].read = "Finished Reading";
+        showBooks();
+    } else {
+        myLibrary[i].read = "Not Read Yet";
+        showBooks();
+    }
 }
