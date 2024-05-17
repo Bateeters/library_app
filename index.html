@@ -9,21 +9,33 @@
 <body>
     <div id="topContainer">
         <h1>My Library</h1>
-        <button>NEW BOOK</button>
+        <button class="newBookBtn">NEW BOOK</button>
     </div>
+    <form id="hideForm" action="">
+        <div class="formRow">
+            <div class="formInput">
+                <label for="title">Book Title:</label>
+                <input type="text" name="title" id="title" placeholder="Book Title">
+            </div>
+            <div class="formInput">
+                <label for="author">Author:</label>
+                <input type="text" name="author" id="author" placeholder="Author">
+            </div>
+        </div>
+        <div class="formRow">
+            <div class="formInput">
+                <label for="pageC">Page Count:</label>
+                <input type="number" name="pageC" id="pageC" placeholder="How many pages?">
+            </div>
+            <div class="formInput">
+                <label for="read">Have You Read It?:</label>
+                <input type="text" name="read" id="read" placeholder="Not Read Yet/Have Read">
+            </div>
+        </div>
+        <button class="submitBtn" type="submit">Add Book</button>
+    </form>
     <div id="library"></div>
 
-    <!-- <form action="">
-        <label for="title">Book Title:</label>
-        <input type="text" name="title" id="title" placeholder="Book Title">
-        <label for="author">Author:</label>
-        <input type="text" name="author" id="author" placeholder="Author">
-        <label for="pageC">Page Count:</label>
-        <input type="number" name="pageC" id="pageC" placeholder="How many pages?">
-        <label for="read">Have You Read It?:</label>
-        <input type="text" name="read" id="read" placeholder="Not Read Yet/Have Read">
-        <button type="submit">Add Book</button>
-    </form> -->
 </body>
 <script src="./js/script.js"></script>
 </html>
