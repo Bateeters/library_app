@@ -2,6 +2,7 @@ const library = document.querySelector('#library');
 const newBookBtn = document.querySelector('.newBookBtn');
 const bookForm = document.querySelector('#hideForm');
 const submitBtn = document.querySelector('.submitBtn');
+const cancelBtn = document.querySelector('.cancelSubmit');
 
 const myLibrary = [];
 
@@ -17,8 +18,8 @@ function Book(title, author, pageCount, read){
 }
 
 // creating and adding books to "myLibrary" array
-const book1 = new Book('First Book', 'Some dude', 100, 'Not read yet');
-const book2 = new Book('Moby Dick', 'Mark Twain', 423, 'Have read');
+const book1 = new Book('Great Expectations', 'Charles Dickens', 544, 'Not read yet');
+const book2 = new Book('Moby Dick', 'Herman Melville', 635, 'Have read');
 myLibrary.push(book1);
 myLibrary.push(book2);
 
@@ -60,6 +61,11 @@ window.onload = function(){
 // Show new book form
 newBookBtn.addEventListener("click", () => {
     bookForm.setAttribute("id", "showForm");
+})
+
+// Cancel submit form
+cancelBtn.addEventListener("click", () => {
+    bookForm.setAttribute("id", "hideForm");
 })
 
 // Submit new book form and populate Library list utilizing a "submit" type button without "action" field

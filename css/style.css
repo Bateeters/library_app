@@ -2,6 +2,7 @@ body{
     background-color: rgb(252, 247, 231);
     width: 60%;
     margin: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #topContainer{
@@ -14,7 +15,7 @@ h1 {
     margin-right: auto;
 }
 
-.newBookBtn{
+.newBookBtn, .submitBtn{
     background-color: green;
     color: white;
     padding: 6px 10px;
@@ -23,7 +24,7 @@ h1 {
     box-shadow: 1px 2px 5px #000000;
 }
 
-.newBookBtn:active{
+.newBookBtn:active, .submitBtn:active{
     background-color: rgb(4, 74, 4);
     color: rgb(178, 177, 177);
     box-shadow: 1px 2px 5px #000000 inset;
@@ -49,19 +50,19 @@ h1 {
     margin-left: auto;
 }
 
-.bookR>button{
+.bookR>button, .cancelSubmit{
     background-color: red;
     color: white;
     padding: 6px 10px;
     border-radius: 5px;
     border: none;
-    box-shadow: .5px 1px 3px #000000;
+    box-shadow: 1px 2px 5px #000000;
 }
 
-.bookR>button:active{
+.bookR>button:active, .cancelSubmit:active{
     background-color: rgb(165, 12, 12);
     color: rgb(178, 177, 177);
-    box-shadow: .5px 1px 3px #000000 inset;
+    box-shadow: 1px 2px 5px #000000 inset;
 }
 
 #hideForm{
@@ -72,4 +73,37 @@ h1 {
     padding: 15px;
     display: flex;
     flex-direction: column;
+    gap: 15px;
+}
+
+label{
+    font-size: .9em;
+}
+
+input{
+    width: 250px;
+    font-size: 1.2em;
+}
+
+.formRow{
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.formInput{
+    display: flex;
+    flex-direction: column;
+}
+
+.formBtns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.cancelSubmit, .submitBtn{
+    width: 100px;
+    padding: 6px 10px;
 }
