@@ -70,13 +70,18 @@ submitBtn.addEventListener("click", () => {
     const newAuthor = document.querySelector("#author");
     const newPgC = document.querySelector("#pageC");
     const newRead = document.querySelector("#read");
+    console.log(newTitle.value, newAuthor.value, newPgC.value, newRead.value);
 
-    addBookToLibrary(newTitle.value, newAuthor.value, newPgC.value, newRead.value);
+    if(newTitle.value =="" || newAuthor.value =="" || newPgC.value =="" || newRead.value ==""){
+        alert("Please fill out all fields before submitting.")
+    } else {
+        addBookToLibrary(newTitle.value, newAuthor.value, newPgC.value, newRead.value);
 
-    // Reset form to hidden and empty fields
-    bookForm.setAttribute("id","hideForm");
-    newTitle.value = "";
-    newAuthor.value = "";
-    newPgC.value = "";
-    newRead.value = "";
+        // Reset form to hidden and empty fields
+        bookForm.setAttribute("id","hideForm");
+        newTitle.value = "";
+        newAuthor.value = "";
+        newPgC.value = "";
+        newRead.value = "";
+    }
 })
