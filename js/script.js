@@ -24,10 +24,17 @@ myLibrary.push(book2);
 
 // Add book to library list
 function addBookToLibrary(title, author, pageCount, read) {
+    const newBook = new Book(title, author, pageCount, read);
+    myLibrary.push(newBook);
+    showBooks();
 }
 
 // Display books in "library" div
 function showBooks(){
+
+    // Clear Library list to run through loop again and avoid duplicating books
+    library.innerHTML = '';
+
     for (let i = 0; i < myLibrary.length; i++) {
             const newBook = document.createElement("div");
 
@@ -63,10 +70,8 @@ submitBtn.addEventListener("click", () => {
     const newAuthor = document.querySelector("#author");
     const newPgC = document.querySelector("#pageC");
     const newRead = document.querySelector("#read");
+
     addBookToLibrary(newTitle.value, newAuthor.value, newPgC.value, newRead.value);
-
-
-    console.log("submit button no longer does submit things!");
 
     // Reset form to hidden and empty fields
     bookForm.setAttribute("id","hideForm");
