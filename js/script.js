@@ -80,13 +80,16 @@ newBookBtn.addEventListener("click", () => {
 // Cancel submit form
 cancelBtn.addEventListener("click", () => {
     bookForm.setAttribute("id", "hideForm");
+    newTitle.value = "";
+    newAuthor.value = "";
+    newPgC.value = "";
 })
 
 // Submit new book form and populate Library list utilizing a "submit" type button without "action" field
 submitBtn.addEventListener("click", () => {
     event.preventDefault();
 
-    if(newTitle.value =="" || newAuthor.value =="" || newPgC.value =="" || newRead.value ==""){
+    if(newTitle.value =="" || newAuthor.value =="" || newPgC.value ==""){
         alert("Please fill out all fields before submitting.")
     } else {
         for (i = 0; i < newRead.length; i++) {
