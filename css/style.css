@@ -31,11 +31,31 @@ h1 {
 }
 
 .book{
+    display: flex;
     background-color: white;
     border: 1px solid gray;
     border-radius: 10px;
     margin: 15px;
     padding: 10px;
+}
+
+.bookR{
+    margin-left: auto;
+}
+
+.bookR>button{
+    background-color: red;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: .5px 1px 3px #000000;
+}
+
+.bookR>button:active{
+    background-color: rgb(165, 12, 12);
+    color: rgb(178, 177, 177);
+    box-shadow: .5px 1px 3px #000000 inset;
 }
 
 #hideForm{

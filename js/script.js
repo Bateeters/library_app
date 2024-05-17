@@ -1,6 +1,7 @@
 const library = document.querySelector('#library');
 const newBookBtn = document.querySelector('.newBookBtn');
 const bookForm = document.querySelector('#hideForm');
+const submitBtn = document.querySelector('.submitBtn');
 
 const myLibrary = [];
 
@@ -30,9 +31,12 @@ function showBooks(){
     for (let i = 0; i < myLibrary.length; i++) {
             const newBook = document.createElement("div");
 
-            newBook.innerHTML = 
-            `<h4>${myLibrary[i].title} by ${myLibrary[i].author}</h4>
-            <p>${myLibrary[i].pageCount} pages, ${myLibrary[i].read}`
+            newBook.innerHTML = `<div>
+            <h4>${myLibrary[i].title} by ${myLibrary[i].author}</h4>
+            <p>${myLibrary[i].pageCount} pages, ${myLibrary[i].read}
+            </div>
+
+            <div class="bookR"><button>X</button></div>`
 
             newBook.setAttribute("class", "book");
             
@@ -46,6 +50,13 @@ window.onload = function(){
     showBooks();
 }
 
+// Show new book form
 newBookBtn.addEventListener("click", () => {
     bookForm.setAttribute("id", "showForm");
+})
+
+// Submit new book form and populate Library list utilizing a "submit" type button without "action" field
+submitBtn.addEventListener("click", () => {
+    event.preventDefault();
+    console.log("submit button no longer does submit things!");
 })
