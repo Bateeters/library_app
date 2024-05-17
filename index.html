@@ -27,11 +27,22 @@
                 <label for="pageC">Page Count:</label>
                 <input type="number" name="pageC" id="pageC" placeholder="How many pages?">
             </div>
-            <div class="formInput">
-                <label for="read">Have You Read It?:</label>
-                <input type="text" name="read" id="read" placeholder="Not Read Yet/Have Read">
-            </div>
         </div>
+        <fieldset class="formRadio">
+            <legend>Have You Read It Yet?</legend>
+            <div>
+                <input class="radioBtn" type="radio" name="readStat" id="readStat" value="Not Read Yet">
+                <label for="Not Read Yet">Not Read Yet</label>
+            </div>
+            <div>
+                <input class="radioBtn" type="radio" name="readStat" id="readStat" value="In Progress">
+                <label for="In Progress">In Progress</label>
+            </div>
+            <div>
+                <input class="radioBtn" type="radio" name="readStat" id="readStat" value="Finished Reading">
+                <label for="Finished Reading">Finished Reading</label>
+            </div>
+        </fieldset>
         <div class="formBtns">
             <button class="submitBtn" type="submit">Add Book</button>
             <button class="cancelSubmit" type="button">Cancel</button>

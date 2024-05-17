@@ -96,6 +96,16 @@ input{
     flex-direction: column;
 }
 
+.formRadio{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 25px;
+}
+
+.radioBtn{
+    width: 25px;
+}
+
 .formBtns{
     display: flex;
     justify-content: center;

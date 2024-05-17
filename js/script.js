@@ -75,19 +75,26 @@ submitBtn.addEventListener("click", () => {
     const newTitle = document.querySelector("#title");
     const newAuthor = document.querySelector("#author");
     const newPgC = document.querySelector("#pageC");
-    const newRead = document.querySelector("#read");
-    console.log(newTitle.value, newAuthor.value, newPgC.value, newRead.value);
+    const newRead = document.querySelectorAll("#readStat");
+
+
+
 
     if(newTitle.value =="" || newAuthor.value =="" || newPgC.value =="" || newRead.value ==""){
         alert("Please fill out all fields before submitting.")
     } else {
-        addBookToLibrary(newTitle.value, newAuthor.value, newPgC.value, newRead.value);
+        for (i = 0; i < newRead.length; i++) {
+            if (newRead[i].checked){
+                console.log(newTitle.value, newAuthor.value, newPgC.value, newRead[i].value);
+                addBookToLibrary(newTitle.value, newAuthor.value, newPgC.value, newRead[i].value);
 
-        // Reset form to hidden and empty fields
-        bookForm.setAttribute("id","hideForm");
-        newTitle.value = "";
-        newAuthor.value = "";
-        newPgC.value = "";
-        newRead.value = "";
+                // Reset form to hidden and empty fields
+                bookForm.setAttribute("id","hideForm");
+                newTitle.value = "";
+                newAuthor.value = "";
+                newPgC.value = "";
+                newRead[i].checked = false;
+            }
+        }
     }
 })
