@@ -18,8 +18,8 @@ function Book(title, author, pageCount, read){
 }
 
 // creating and adding books to "myLibrary" array
-const book1 = new Book('Great Expectations', 'Charles Dickens', 544, 'Not read yet');
-const book2 = new Book('Moby Dick', 'Herman Melville', 635, 'Have read');
+const book1 = new Book('Great Expectations', 'Charles Dickens', 544, 'Not Read Yet');
+const book2 = new Book('Moby Dick', 'Herman Melville', 635, 'Finished Reading');
 myLibrary.push(book1);
 myLibrary.push(book2);
 
