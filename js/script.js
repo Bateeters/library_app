@@ -58,5 +58,20 @@ newBookBtn.addEventListener("click", () => {
 // Submit new book form and populate Library list utilizing a "submit" type button without "action" field
 submitBtn.addEventListener("click", () => {
     event.preventDefault();
+
+    const newTitle = document.querySelector("#title");
+    const newAuthor = document.querySelector("#author");
+    const newPgC = document.querySelector("#pageC");
+    const newRead = document.querySelector("#read");
+    addBookToLibrary(newTitle.value, newAuthor.value, newPgC.value, newRead.value);
+
+
     console.log("submit button no longer does submit things!");
+
+    // Reset form to hidden and empty fields
+    bookForm.setAttribute("id","hideForm");
+    newTitle.value = "";
+    newAuthor.value = "";
+    newPgC.value = "";
+    newRead.value = "";
 })
