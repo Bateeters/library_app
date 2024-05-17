@@ -38,17 +38,22 @@ function showBooks(){
 
     for (let i = 0; i < myLibrary.length; i++) {
             const newBook = document.createElement("div");
+            const deleteBtn = document.createElement("div");
 
-            newBook.innerHTML = `<div>
+            newBook.innerHTML = `
+            <div>
             <h4>${myLibrary[i].title} by ${myLibrary[i].author}</h4>
             <p>${myLibrary[i].pageCount} pages, ${myLibrary[i].read}
             </div>
+            `
 
-            <div class="bookR"><button>X</button></div>`
+            deleteBtn.innerHTML = `<button onclick="deleteBook(${i})">X</button>`;
 
-            newBook.setAttribute("class", "book");
+            newBook.setAttribute("class", `book`);
+            deleteBtn.setAttribute("class", `bookR`);
             
             library.appendChild(newBook);
+            newBook.appendChild(deleteBtn);
             console.log(myLibrary[i].info());
         }    
 }
@@ -98,3 +103,8 @@ submitBtn.addEventListener("click", () => {
         }
     }
 })
+
+function deleteBook(i) {
+	myLibrary.splice(i, 1);
+	showBooks();
+}
