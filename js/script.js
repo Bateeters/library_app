@@ -7,7 +7,7 @@ const cancelBtn = document.querySelector('.cancelSubmit');
 const newTitle = document.querySelector("#title");
 const newAuthor = document.querySelector("#author");
 const newPgC = document.querySelector("#pageC");
-const newRead = document.querySelectorAll(".radioBtn");
+const newRead = document.querySelectorAll(".radioBtn"); // access using class or since radio btns shouldn't have same id
 
 const myLibrary = [];
 
