@@ -94,7 +94,6 @@ submitBtn.addEventListener("click", () => {
     } else {
         for (i = 0; i < newRead.length; i++) {
             if (newRead[i].checked){
-                console.log(newTitle.value, newAuthor.value, newPgC.value, newRead[i].value);
                 addBookToLibrary(newTitle.value, newAuthor.value, newPgC.value, newRead[i].value);
 
                 // Reset form to hidden and empty fields
