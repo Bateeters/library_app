@@ -7,7 +7,7 @@ const cancelBtn = document.querySelector('.cancelSubmit');
 const newTitle = document.querySelector("#title");
 const newAuthor = document.querySelector("#author");
 const newPgC = document.querySelector("#pageC");
-const newRead = document.querySelectorAll("#readStat");
+const newRead = document.querySelectorAll(".radioBtn");
 
 const myLibrary = [];
 
