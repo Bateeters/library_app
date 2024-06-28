@@ -11,15 +11,17 @@ const newRead = document.querySelectorAll(".radioBtn"); // access using class or
 
 const myLibrary = [];
 
-// Book Object Constructor
-function Book(title, author, pageCount, read){
-    this.title = title;
-    this.author = author;
-    this.pageCount = pageCount;
-    this.read = read;
-    this.info = function(){
-        return `${this.title} by ${this.author}, ${pageCount} pages, ${this.read}`
-    };
+// Book Class
+class Book {
+    constructor(title,author,pageCount, read){
+        this.title = title;
+        this.author = author;
+        this.pageCount = pageCount;
+        this.read = read;
+        this.info = function(){
+            return `${this.title} by ${this.author}, ${pageCount} pages, ${this.read}`
+        };
+    }
 }
 
 // creating and adding books to "myLibrary" array
